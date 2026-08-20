@@ -1,0 +1,3 @@
+import { Logo } from "./Logo";
+import { Footer } from "./Footer";
+export function LegalPage({title,updated,children}:{title:string;updated:string;children:React.ReactNode}){return <><header className="border-b border-white/10 py-5"><div className="container-page"><Logo/></div></header><main className="container-page min-h-[70vh] py-20"><p className="eyebrow">Legal information</p><h1 className="section-title mt-4">{title}</h1><p className="mt-5 text-xs text-white/30">Last updated: {updated}</p><div className="mt-12 max-w-3xl space-y-9 text-sm leading-7 text-white/55 [&_h2]:mb-3 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-cream">{children}</div></main><Footer/></>}

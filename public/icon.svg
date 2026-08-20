@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Prime IPTV</title>
+  <defs>
+    <linearGradient id="gold" x1="24" y1="14" x2="102" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3D991"/>
+      <stop offset="0.48" stop-color="#D5AF5C"/>
+      <stop offset="1" stop-color="#9B702A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="128" height="128" rx="28" fill="#050605"/>
+  <rect x="3" y="3" width="122" height="122" rx="25" fill="none" stroke="#D5AF5C" stroke-opacity="0.24" stroke-width="2"/>
+
+  <path d="M36 32 33 17l14 9 17-15 17 15 14-9-3 15Z" fill="url(#gold)"/>
+  <rect x="38" y="34" width="52" height="5" rx="2.5" fill="url(#gold)"/>
+
+  <path fill="url(#gold)" fill-rule="evenodd" d="M34 106V43h35c20 0 33 11 33 29 0 17-13 29-33 29H53v5H34Zm19-20h16c9 0 15-5 15-14 0-8-6-14-15-14H53v28Zm7-23 16 9-16 9V63Z" clip-rule="evenodd"/>
+</svg>
