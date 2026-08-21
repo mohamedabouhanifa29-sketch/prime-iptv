@@ -39,6 +39,9 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .legal-copy ul,.legal-copy ol { margin-top:1rem;padding-left:1.15rem;display:grid;gap:.55rem; }
 .legal-copy ul { list-style:disc; }.legal-copy ol { list-style:decimal; }
 .legal-copy strong { color:rgba(255,255,255,.78);font-weight:650; }
+.catalog-row { grid-auto-columns:43vw;overscroll-behavior-inline:contain; }
+@media (min-width:640px) { .catalog-row { grid-auto-columns:30.5%; } }
+@media (min-width:1024px) { .catalog-row { grid-auto-columns:calc((100% - 2.25rem) / 4); } }
 @keyframes logo-reveal { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:translateY(0); } }
 @keyframes chat-typing { from { opacity:.25;transform:translateY(1px) } to { opacity:1;transform:translateY(-2px) } }
 @media (max-width:640px) { .container-page { width:min(100% - 28px,1400px); } }
