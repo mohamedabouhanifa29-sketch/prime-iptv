@@ -43,7 +43,7 @@ export function HeroVisual() {
       </div>
 
       <motion.div className="absolute left-[25%] top-[26%] z-10 w-[52%]" animate={{ y: [0, -5, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
-        <Image src="/images/prime-iptv-logo.png" alt="Prime IPTV" width={1536} height={1024} priority sizes="(max-width: 768px) 45vw, 330px" className="h-auto w-full rounded-[14%] object-contain mix-blend-screen drop-shadow-[0_0_22px_rgba(213,175,92,.28)]" />
+        <Image src="/images/prime-iptv-logo.png" alt="Prime IPTV" width={1536} height={1024} preload sizes="(max-width: 768px) 45vw, 330px" className="h-auto w-full rounded-[14%] object-contain mix-blend-screen drop-shadow-[0_0_22px_rgba(213,175,92,.28)]" />
       </motion.div>
 
       <div className="absolute bottom-[3%] left-[13%] z-20 h-[39%] w-[22%] rotate-[-5deg] rounded-[13%] border border-white/20 bg-gradient-to-br from-[#252821] to-[#060706] p-[2%] shadow-2xl">

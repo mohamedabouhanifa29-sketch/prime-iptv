@@ -15,7 +15,7 @@ export function Logo({ variant = "navbar" }: { variant?: "navbar" | "footer" }) 
         alt="Prime IPTV"
         width={1536}
         height={1024}
-        priority={!footer}
+        loading={footer ? "lazy" : "eager"}
         sizes={footer ? "(max-width: 640px) 150px, 170px" : "(max-width: 640px) 76px, (max-width: 1280px) 92px, 108px"}
         className="h-auto w-full object-contain"
       />

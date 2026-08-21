@@ -61,8 +61,10 @@ For Vercel, import the Git repository, configure `NEXT_PUBLIC_SITE_URL`, and dep
 
 ## Order and security notes
 
-The current order modal validates and sanitizes user input, then presents a completion state without transmitting or storing personal data. Before accepting real orders, connect it to a server-side route with server validation, CSRF protection, rate limiting, and a payment/WhatsApp provider. Keep provider credentials in `.env.local` and read them only from server-side modules. Never prefix secrets with `NEXT_PUBLIC_`.
+Order and trial forms validate and normalize input locally, then prepare an encoded message for the fixed WhatsApp destination configured in `lib/config.ts`. The site does not store these forms and currently has no API routes or Server Actions. WhatsApp opens only after a valid user submission.
 
-Security headers are configured in `next.config.ts`. The CSP currently allows development requirements; for production, use nonce-based scripts if your deployment architecture supports them and remove `unsafe-eval` after confirming the production runtime does not require it.
+Security headers are configured in `next.config.ts`. Production removes `unsafe-eval`, enables HSTS, blocks framing and object/embed content, restricts browser permissions, and permits no remote image hosts. The static Next.js CSP retains `unsafe-inline` for framework bootstrap scripts and inline animation styles. A nonce-based strict CSP would require dynamic rendering and a per-request Proxy; evaluate that tradeoff if the site later handles accounts, payments, or other sensitive server-side operations.
 
-The legal pages are editable starter structures, not legal advice. Complete them with verified business, jurisdiction, payment, and retention details before launch.
+All `.env*` files are ignored except `.env.example`. Keep secrets in an ignored environment file or the deployment platform's secret store, read them only from server-only modules, and never prefix secrets with `NEXT_PUBLIC_`. `NEXT_PUBLIC_SITE_URL` is intentionally public because it is used for canonical and sitemap URLs.
+
+If an API route, payment callback, authenticated action, or database is added later, implement server-side schema validation, authorization, origin/CSRF checks where applicable, rate limiting, request-size limits, safe logging, and provider webhook signature verification before deployment. Client-side throttling is not a security control.

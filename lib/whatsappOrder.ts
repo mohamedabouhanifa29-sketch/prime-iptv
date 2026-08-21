@@ -1,3 +1,5 @@
+import { normalizeWhatsAppNumber } from "./contactLinks";
+
 export type WhatsAppOrderData = {
   plan: string;
   price: number;
@@ -53,13 +55,13 @@ Thank you.`;
 }
 
 export function createWhatsAppOrderUrl(number: string, data: WhatsAppOrderData) {
-  const normalizedNumber = number.replace(/\D/g, "");
+  const normalizedNumber = normalizeWhatsAppNumber(number);
   if (!normalizedNumber) return null;
   return `https://wa.me/${normalizedNumber}?text=${encodeURIComponent(createWhatsAppOrderMessage(data))}`;
 }
 
 export function createWhatsAppTrialUrl(number: string, data: WhatsAppTrialData) {
-  const normalizedNumber = number.replace(/\D/g, "");
+  const normalizedNumber = normalizeWhatsAppNumber(number);
   if (!normalizedNumber) return null;
   return `https://wa.me/${normalizedNumber}?text=${encodeURIComponent(createWhatsAppTrialMessage(data))}`;
 }

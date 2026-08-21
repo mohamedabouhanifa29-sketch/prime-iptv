@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/lib/config";
+import { createEmailContactUrl, createWhatsAppContactUrl } from "@/lib/contactLinks";
 import { Logo } from "./Logo";
 import { Footer } from "./Footer";
 
 export type LegalSection = { id:string; label:string };
 
 export function LegalContact(){
-  const whatsapp=siteConfig.whatsapp?`https://wa.me/${siteConfig.whatsapp.replace(/\D/g,"")}`:null;
-  return <div className="mt-5 flex flex-wrap gap-3">{siteConfig.email&&<a className="btn-secondary" href={`mailto:${siteConfig.email}`}><Mail size={15}/>{siteConfig.email}<ArrowUpRight size={13}/></a>}{whatsapp&&<a className="btn-secondary" href={whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle size={15}/>WhatsApp Support<ArrowUpRight size={13}/></a>}</div>;
+  const whatsapp=createWhatsAppContactUrl(siteConfig.whatsapp),email=createEmailContactUrl(siteConfig.email);
+  return <div className="mt-5 flex flex-wrap gap-3">{email&&<a className="btn-secondary" href={email}><Mail size={15}/>{siteConfig.email}<ArrowUpRight size={13}/></a>}{whatsapp&&<a className="btn-secondary" href={whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle size={15}/>WhatsApp Support<ArrowUpRight size={13}/></a>}</div>;
 }
 
 export function LegalPage({title,updated,description,sections,children}:{title:string;updated:string;description:string;sections:LegalSection[];children:React.ReactNode}){

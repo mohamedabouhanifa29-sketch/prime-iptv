@@ -1,6 +1,6 @@
 export type ChatAction =
   | { type: "suggestion"; label: string; message: string }
-  | { type: "anchor"; label: string; href: string }
+  | { type: "anchor"; label: string; href: "#plans" | "/terms" }
   | { type: "whatsapp"; label: string }
   | { type: "email"; label: string }
   | { type: "trial"; label: string };
