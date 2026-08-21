@@ -26,6 +26,8 @@ export async function getChatbotResponse(message:string):Promise<ChatbotResponse
   const raw=message.slice(0,500);
   if(sensitive.test(raw)) return {kind:"security",answer:"For your security, please do not share passwords, card details, verification codes or other sensitive information in this chat."};
   const text=normalizeChatText(raw), tokens=expandedTokens(text);
+  const refundTerms=["refund","refund policy","money back","cancel subscription","cancellation"];
+  if(refundTerms.some(term=>text.includes(term))) return {kind:"answer",answer:"Refund requests must be submitted within 24 hours of the initial activation of a paid subscription. Eligibility is reviewed according to our Refund Policy and applicable consumer law. Please contact Prime IPTV Support for assistance.",actions:[{type:"anchor",label:"View Terms",href:"/terms"}]};
   const pricingTerms=["price","prices","pricing","subscription","plan","plans","how much","cost","package","membership"];
   if(pricingTerms.some(term=>text.includes(term))) return {kind:"answer",answer:`Prime IPTV offers these subscription plans:\n\n${plans.map(plan=>`${plan.name} — €${plan.price}${plan.badge?` — ${plan.badge}`:""}`).join("\n")}`,actions:[{type:"anchor",label:"View Plans",href:"#plans"}]};
 
