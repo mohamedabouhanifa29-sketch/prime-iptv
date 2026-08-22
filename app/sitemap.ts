@@ -22,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${siteConfig.url}/best-iptv-service`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+},
+    {
       url: `${siteConfig.url}/privacy`,
       lastModified: new Date(),
       changeFrequency: "yearly",
