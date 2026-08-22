@@ -18,8 +18,19 @@ export function Hero({ onOrder, onTrial }: { onOrder: () => void; onTrial: () =>
       <div className="grid items-center gap-8 lg:grid-cols-[.96fr_1.04fr] xl:gap-12">
         <motion.div initial="hidden" animate="show" variants={{hidden:{opacity:0},show:{opacity:1,transition:{staggerChildren:.11}}}} className="relative z-20 max-w-[690px]">
           <motion.div variants={{hidden:{opacity:0,y:14},show:{opacity:1,y:0}}} className="eyebrow mb-5 flex items-center gap-3"><span className="h-px w-8 bg-gold"/> Premium streaming experience</motion.div>
-          <motion.h1 variants={{hidden:{opacity:0,y:20},show:{opacity:1,y:0}}} className="section-title text-[clamp(2.9rem,5.7vw,6.15rem)] leading-[.96]">Premium Entertainment.<br/><span className="gold-text italic">Anytime. Anywhere.</span></motion.h1>
-          <motion.p variants={{hidden:{opacity:0,y:16},show:{opacity:1,y:0}}} className="mt-6 max-w-xl text-[15px] leading-7 text-white/55 md:text-lg md:leading-8">Enjoy a smooth and premium streaming experience across your favorite devices.</motion.p>
+<motion.h1
+  variants={{hidden:{opacity:0,y:20},show:{opacity:1,y:0}}}
+  className="section-title text-[clamp(2.9rem,5.7vw,6.15rem)] leading-[.96]"
+>
+  Premium IPTV Streaming.<br/>
+  <span className="gold-text italic">Anytime. Anywhere.</span>
+</motion.h1>
+<motion.p
+  variants={{hidden:{opacity:0,y:16},show:{opacity:1,y:0}}}
+  className="mt-6 max-w-xl text-[15px] leading-7 text-white/55 md:text-lg md:leading-8"
+>
+  Enjoy premium IPTV streaming with live TV, movies, series and multi-device support across your favorite devices.
+</motion.p>
           <motion.div variants={{hidden:{opacity:0,y:14},show:{opacity:1,y:0}}} className="mt-8 flex flex-wrap gap-3"><motion.button whileTap={{scale:.97}} onClick={onOrder} className="btn-primary">Get Started <ArrowRight size={16}/></motion.button><motion.button whileTap={{scale:.97}} onClick={onTrial} className="btn-trial"><Clock3 size={16}/> Free 24H Trial <span className="rounded-full bg-gold/15 px-2 py-1 text-[8px] tracking-wider">24H FREE</span></motion.button><motion.a whileTap={{scale:.97}} href="#plans" className="btn-secondary"><Play size={15} fill="currentColor"/> View Plans</motion.a></motion.div>
         </motion.div>
         <HeroVisual/>
