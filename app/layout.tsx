@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     "Premium IPTV subscription plans with live TV, movies, series, sports and multi-device support. Fast activation and flexible plans from 1 to 24 months.",
 
   alternates: {
-    canonical: "/",
-  },
+  canonical: "https://www.primeiptvworld.com/",
+},
 
   openGraph: {
     title: "Prime IPTV | Premium IPTV Subscription & Streaming Plans",
     description:
       "Premium IPTV subscription plans with live TV, movies, series, sports and multi-device support.",
-    url: "/",
+    url: "https://www.primeiptvworld.com/",
     siteName: "PRIME IPTV",
     type: "website",
   },
