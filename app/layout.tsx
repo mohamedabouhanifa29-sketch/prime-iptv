@@ -4,11 +4,35 @@ import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: { default: "Prime IPTV | Premium Streaming Plans", template: "%s | Prime IPTV" },
-  description: siteConfig.description,
-  alternates: { canonical: "/" },
-  openGraph: { title: "Prime IPTV | Premium Streaming Plans", description: siteConfig.description, url: "/", siteName: "PRIME IPTV", type: "website" },
-  twitter: { card: "summary_large_image", title: "Prime IPTV | Premium Streaming Plans", description: siteConfig.description },
+
+  title: {
+    default: "Prime IPTV | Premium IPTV Subscription & Streaming Plans",
+    template: "%s | Prime IPTV",
+  },
+
+  description:
+    "Premium IPTV subscription plans with live TV, movies, series, sports and multi-device support. Fast activation and flexible plans from 1 to 24 months.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Prime IPTV | Premium IPTV Subscription & Streaming Plans",
+    description:
+      "Premium IPTV subscription plans with live TV, movies, series, sports and multi-device support.",
+    url: "/",
+    siteName: "PRIME IPTV",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Prime IPTV | Premium IPTV Subscription & Streaming Plans",
+    description:
+      "Premium IPTV subscription plans with live TV, movies, series, sports and multi-device support.",
+  },
+
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml", sizes: "any" }],
     shortcut: "/icon.svg",
