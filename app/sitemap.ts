@@ -26,7 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
-},
+    },
+   {
+     url: `${siteConfig.url}/iptv-for-firestick`,
+     lastModified: new Date(),
+     changeFrequency: "weekly",
+     priority: 0.8,
+    },
     {
       url: `${siteConfig.url}/privacy`,
       lastModified: new Date(),
