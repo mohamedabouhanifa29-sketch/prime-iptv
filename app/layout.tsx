@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { siteConfig } from "@/lib/config";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -78,6 +79,7 @@ export default function RootLayout({
         />
 
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
