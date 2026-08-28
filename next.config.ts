@@ -7,8 +7,7 @@ const csp = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self'",
-  `connect-src 'self'${isDevelopment ? " ws: wss:" : ""}`,
-  "media-src 'self' blob:",
+  `connect-src 'self' https://*.vercel-insights.com https://vitals.vercel-insights.com${isDevelopment ? " ws: wss:" : ""}`,  "media-src 'self' blob:",
   "object-src 'none'",
   "frame-src 'none'",
   "worker-src 'self' blob:",
@@ -39,7 +38,10 @@ const nextConfig: NextConfig = {
       { key: "X-DNS-Prefetch-Control", value: "off" },
       { key: "Cross-Origin-Opener-Policy", value: "same-origin-allow-popups" },
       { key: "Origin-Agent-Cluster", value: "?1" },
-      ...(isDevelopment ? [] : [{ key: "Strict-Transport-Security", value: "max-age=31536000" }]),
+      ...(isDevelopment ? [] : [{
+  key: "Strict-Transport-Security",
+  value: "max-age=31536000; includeSubDomains",
+}]),
     ];
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
